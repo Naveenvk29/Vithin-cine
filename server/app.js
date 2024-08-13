@@ -4,6 +4,7 @@ import cors from "cors";
 
 // routes import
 import userRoutes from "./Routes/user.routes.js";
+import genreRoutes from "./Routes/genre.routes.js";
 // Express setup
 const app = express();
 
@@ -15,6 +16,8 @@ app.use(cookieParser());
 
 // routes middleware
 app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/genre", genreRoutes);
+
 app.get("/test", (req, res) => {
   res.json({ message: "Hello World!" });
   console.log("hello world!");
