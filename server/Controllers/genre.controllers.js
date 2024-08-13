@@ -17,19 +17,16 @@ const createGenre = asyncHandler(async (req, res) => {
 });
 
 const updateGenre = asyncHandler(async (req, res) => {
-  try {
-    const { id: _id } = req.params;
-    const { name } = req.body;
-    if (!name) return res.status(404).json({ error: "Name is required" });
+  const { id } = req.params; // Ensure this matches the API call
+  const { name } = req.body;
+  if (!name) return res.status(400).json({ error: "Name is required" });
 
-    const genre = await Genre.findById(id);
-    if (!genre) return res.status(404).json({ error: " genre not found" });
-    genre.name = name;
-    const updatedGenre = await genre.save();
-    res.json(updatedGenre);
-  } catch (error) {
-    return res.status(500).json({ message: "Server Error" });
-  }
+  const genre = await Genre.findById(id); // Ensure `id` is used correctly
+  if (!genre) return res.status(404).json({ error: "Genre not found" });
+
+  genre.name = name;
+  const updatedGenre = await genre.save();
+  res.json(updatedGenre);
 });
 
 const deleteGenre = asyncHandler(async (req, res) => {
@@ -37,7 +34,7 @@ const deleteGenre = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const genre = await Genre.findById(id);
     if (!genre) return res.status(404).json({ error: "Genre not found" });
-    await genre.remove();
+    await genre.deleteOne();
     res.json({ message: "Genre deleted successfully" });
   } catch (error) {
     return res.status(500).json({ message: "Server Error" });

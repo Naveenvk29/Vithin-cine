@@ -12,10 +12,10 @@ export const genreApiSlice = apiSlice.injectEndpoints({
     }),
 
     updateGenre: builder.mutation({
-      query: ({ id, updateGenre }) => ({
-        url: `${GENRE_URL}/${id}`,
+      query: ({ _id, data }) => ({
+        url: `${GENRE_URL}/${_id}`,
         method: "PUT",
-        body: updateGenre,
+        body: data,
       }),
     }),
 
@@ -26,7 +26,7 @@ export const genreApiSlice = apiSlice.injectEndpoints({
       }),
     }),
 
-    fetchGenres: builder.query({
+    getAllGenres: builder.query({
       query: () => `${GENRE_URL}/genres`,
     }),
   }),
@@ -36,5 +36,5 @@ export const {
   useCreateGenreMutation,
   useUpdateGenreMutation,
   useDeleteGenreMutation,
-  useFetchGenresQuery,
+  useGetAllGenresQuery,
 } = genreApiSlice;
