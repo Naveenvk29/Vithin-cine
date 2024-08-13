@@ -57,6 +57,7 @@ const readGenre = asyncHandler(async (req, res) => {
     const { id } = req.params;
     const genre = await Genre.findById(id);
     if (!genre) return res.status(404).json({ error: "Genre not found" });
+    res.json(genre);
   } catch (error) {
     return res.status(500).json({ message: "Server Error" });
   }
