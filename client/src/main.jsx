@@ -19,6 +19,8 @@ import PrivateRoutes from "./Pages/User/PrivateRoutes.jsx";
 import Profile from "./Pages/User/Profile.jsx";
 import Home from "./Pages/Home.jsx";
 import Allmovies from "./Pages/Movie/Allmovies.jsx";
+import AdminRoutes from "./Pages/Admin/AdminRoutes.jsx";
+import GenreManagement from "./Pages/Admin/GenreManagement.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -29,6 +31,12 @@ const router = createBrowserRouter(
       <Route path="" element={<PrivateRoutes />}>
         <Route path="/profile" element={<Profile />} />
       </Route>
+
+      <Route path="" element={<AdminRoutes />}>
+        <Route path="/admin/genres" element={<GenreManagement />} />
+        {/* Add more admin routes here */}
+      </Route>
+
       <Route path="/movies" element={<Allmovies />} />
     </Route>
   )
