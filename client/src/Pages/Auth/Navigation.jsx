@@ -62,7 +62,7 @@ const Navigation = () => {
       }}
       className="fixed bottom-3 flex w-full justify-center "
     >
-      <nav className="flex justify-between gap-3 rounded-3xl  z-50 bg-[#000] text-white border w-[30%] px-[4rem]   ">
+      <nav className="flex justify-between gap-3 rounded-3xl  z-50 bg-[#17153B] text-white border w-[30%] px-[4rem] border-none ">
         <div className="flex justify-center items-center mb-[2rem]">
           <Link
             to="/"
