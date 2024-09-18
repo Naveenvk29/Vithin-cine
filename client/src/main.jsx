@@ -14,12 +14,17 @@ import {
 
 import Login from "./Pages/Auth/Login.jsx";
 import Register from "./Pages/Auth/Register.jsx";
-import PrivateRoutes from "./Pages/User/PrivateRoutes.jsx";
-import Profile from "./Pages/User/Profile.jsx";
 import Home from "./Pages/Home.jsx";
 import Allmovies from "./Pages/Movie/Allmovies.jsx";
+
+// restic routes
+import PrivateRoutes from "./Pages/User/PrivateRoutes.jsx";
+import Profile from "./Pages/User/Profile.jsx";
+
+// admin routes
 import AdminRoutes from "./Pages/Admin/AdminRoutes.jsx";
 import GenreManagement from "./Pages/Admin/GenreManagement.jsx";
+import CreateMovie from "./Pages/Admin/CreateMovie.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -33,6 +38,7 @@ const router = createBrowserRouter(
 
       <Route path="" element={<AdminRoutes />}>
         <Route path="/admin/genres" element={<GenreManagement />} />
+        <Route path="/admin/movies/create" element={<CreateMovie />} />
         {/* Add more admin routes here */}
       </Route>
 

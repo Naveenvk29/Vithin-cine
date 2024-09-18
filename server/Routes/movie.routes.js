@@ -27,14 +27,13 @@ router.post(
   authorrizedAsAdmin,
   createMovie
 );
-upload.single("poster"),
-  router.put(
-    "/update-movie/:id",
-    upload.single("poster"),
-    authenticated,
-    authorrizedAsAdmin,
-    updateMovie
-  );
+router.put(
+  "/update-movie/:id",
+  upload.single("poster"),
+  authenticated,
+  authorrizedAsAdmin,
+  updateMovie
+);
 router.delete(
   "/delete-movie/:id",
   authenticated,
