@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useUpdateUserProfileMutation } from "../../redux/api/userapiSlice";
 import { setCredentials } from "../../redux/features/authSlice";
@@ -24,7 +24,7 @@ const Profile = () => {
 
   const handlerSubmit = async (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
+    if (password !== confirmPassword) {
       toast.error("passwords do not match");
     } else {
       try {
