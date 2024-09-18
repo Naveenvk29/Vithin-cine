@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AdminMoviesList = () => {
   const { data: movies } = useGetAllMoviesQuery();
-  console.log(movies);
+  // console.log(movies);
 
   return (
     <div className="container  ">
