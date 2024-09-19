@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { setCredentials } from "../../redux/features/authSlice";
@@ -41,7 +41,8 @@ const Login = () => {
     <div
       className=" bg-cover    h-[100vh]"
       style={{
-        backgroundImage: `url(${"https://wallpapercave.com/wp/wp6702457.jpg"})`,
+        // backgroundImage: `url(${"https://wallpapercave.com/wp/wp6702457.jpg"})`,
+        backgroundImage: `url(${login2})`,
       }}
     >
       <section className="pl-[10rem] flex flex-wrap">
@@ -59,7 +60,7 @@ const Login = () => {
               <input
                 type="email"
                 id="email"
-                className="mt-1 p-2 border border-black rounded rounded-r-3xl w-full"
+                className="mt-1 p-2 border border-black outline-none rounded rounded-r-3xl w-full"
                 placeholder="Enter Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
@@ -75,7 +76,7 @@ const Login = () => {
               <input
                 type="password"
                 id="password"
-                className="mt-1 p-2 border border-black rounded rounded-r-3xl w-full"
+                className="mt-1 p-2 border border-black outline-none rounded rounded-r-3xl w-full"
                 placeholder="Enter Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

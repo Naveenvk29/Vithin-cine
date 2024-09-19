@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { useScroll, motion, useMotionValueEvent } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -113,7 +113,7 @@ const Navigation = () => {
 
           {dropdownOpen && userInfo && (
             <ul
-              className={`absolute right-0 mt-2 mr-[-10rem] w-[10rem] space-y-2 bg-white text-gray-600 ${
+              className={`absolute right-0 mt-2 mr-[-10rem] w-[10rem] space-y-2 bg-white text-gray-700 ${
                 !userInfo.role === "admin" ? "-top-20" : "-top-24"
               }`}
             >
@@ -122,7 +122,7 @@ const Navigation = () => {
                   <li>
                     <Link
                       to="/admin/movies/dashboard"
-                      className="block px-4 py-2 hover:bg-gray-100"
+                      className="block px-4 py-2 hover:bg-gray-800 hover:text-gray-200"
                     >
                       Dashboard
                     </Link>
@@ -133,7 +133,7 @@ const Navigation = () => {
               <li>
                 <Link
                   to="/profile"
-                  className="block px-4 py-2 hover:bg-gray-100"
+                  className="block px-4 py-2 hover:bg-gray-800 hover:text-gray-200"
                 >
                   Profile
                 </Link>
@@ -142,7 +142,7 @@ const Navigation = () => {
               <li>
                 <button
                   onClick={handleLogout}
-                  className="block w-full px-4 py-2 text-left hover:bg-gray-100"
+                  className="block w-full px-4 py-2 text-left hover:bg-gray-800 hover:text-gray-200"
                 >
                   Logout
                 </button>

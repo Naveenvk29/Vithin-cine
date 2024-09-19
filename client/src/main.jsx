@@ -28,6 +28,8 @@ import GenreManagement from "./Pages/Admin/GenreManagement.jsx";
 import CreateMovie from "./Pages/Admin/CreateMovie.jsx";
 import MoviesList from "./Pages/Admin/MoviesList.jsx";
 import UpdateMovie from "./Pages/Admin/UpdateMovie.jsx";
+import AdminDashboard from "./Pages/Admin/DashBoard/AdminDashboard.jsx";
+import AllComments from "./Pages/Admin/AllComments.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -36,6 +38,7 @@ const router = createBrowserRouter(
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/movies/:id" element={<MovieDetails />} />
+
       <Route path="" element={<PrivateRoutes />}>
         <Route path="/profile" element={<Profile />} />
       </Route>
@@ -45,6 +48,8 @@ const router = createBrowserRouter(
         <Route path="/admin/movies/create" element={<CreateMovie />} />
         <Route path="/admin/movies-list" element={<MoviesList />} />
         <Route path="/admin/movies/update/:id" element={<UpdateMovie />} />
+        <Route path="/admin/movies/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/movies/comments" element={<AllComments />} />
         {/* Add more admin routes here */}
       </Route>
 

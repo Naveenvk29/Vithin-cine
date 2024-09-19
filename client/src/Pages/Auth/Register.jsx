@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate, Link, useLocation } from "react-router-dom";
 import { setCredentials } from "../../redux/features/authSlice";
@@ -66,7 +66,7 @@ const Register = () => {
               <input
                 type="text"
                 id="username"
-                className="mt-1 p-2 w-full border border-black rounded-lg rounded-r-3xl   "
+                className="mt-1 p-2 w-full border border-black outline-none rounded-lg rounded-r-3xl   "
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 required
@@ -82,7 +82,7 @@ const Register = () => {
               <input
                 type="email"
                 id="email"
-                className="mt-1 p-2 w-full border border-black rounded-lg rounded-r-3xl   "
+                className="mt-1 p-2 w-full border border-black outline-none rounded-lg rounded-r-3xl   "
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
@@ -98,7 +98,7 @@ const Register = () => {
               <input
                 type="password"
                 id="passsword"
-                className="mt-1 p-2 w-full border border-black rounded-lg rounded-r-3xl   "
+                className="mt-1 p-2 w-full border border-black outline-none rounded-lg rounded-r-3xl   "
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -115,7 +115,7 @@ const Register = () => {
               <input
                 type="password"
                 id="password"
-                className="mt-1 p-2 w-full border border-black rounded-lg rounded-r-3xl   "
+                className="mt-1 p-2 w-full border border-black outline-none rounded-lg rounded-r-3xl   "
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
                 required
