@@ -16,6 +16,7 @@ import Login from "./Pages/Auth/Login.jsx";
 import Register from "./Pages/Auth/Register.jsx";
 import Home from "./Pages/Home.jsx";
 import Allmovies from "./Pages/Movie/Allmovies.jsx";
+import MovieDetails from "./Pages/Movie/MovieDetails.jsx";
 
 // restic routes
 import PrivateRoutes from "./Pages/User/PrivateRoutes.jsx";
@@ -34,6 +35,7 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/movies/:id" element={<MovieDetails />} />
       <Route path="" element={<PrivateRoutes />}>
         <Route path="/profile" element={<Profile />} />
       </Route>
