@@ -9,7 +9,19 @@ import movieRoutes from "./Routes/movie.routes.js";
 // Express setup
 const app = express();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    credentials: true,
+    allowedHeaders: [
+      "Origin",
+      "X-Requested-With",
+      "Content-Type",
+      "Authorization",
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
