@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import SliderUtil from "../../component/SliderUtil";
 
 const Header = () => {
-  const { data: newMovies, isLoading } = useGetNewMoviesQuery();
+  const { data: newMovies } = useGetNewMoviesQuery();
 
   return (
     <div className="flex mt-[2.5vw] justify-between  items-start">
@@ -21,6 +21,9 @@ const Header = () => {
           Browse Movies
         </Link>
       </nav>
+      <div className="w-[80vw] mr-7 ">
+        <SliderUtil data={newMovies} />
+      </div>
     </div>
   );
 };

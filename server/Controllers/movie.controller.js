@@ -172,7 +172,7 @@ const deletecomment = async (req, res) => {
 
 const getNewMovies = async (req, res) => {
   try {
-    const movies = await Movie.find().sort({ createdAt: -1 }).limit(1);
+    const movies = await Movie.find().sort({ createdAt: -1 }).limit(10);
     res.json(movies);
   } catch (error) {
     res.status(500).json({ message: "Server Error" });

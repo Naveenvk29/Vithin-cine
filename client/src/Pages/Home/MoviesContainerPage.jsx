@@ -1,6 +1,6 @@
 import { useState } from "react";
 import {
-  useGetNewMoviesQuery,
+  useGetAllMoviesQuery,
   useGetRandomMoviesQuery,
   useGetTopMoviesQuery,
 } from "../../redux/api/movieApiSlice";
@@ -11,12 +11,12 @@ const MoviesContainerPage = () => {
   const [selectedGenre, setSelectedGenre] = useState(null);
   const { data: genres } = useGetGenresQuery();
 
-  const { data } = useGetNewMoviesQuery();
+  const { data } = useGetAllMoviesQuery();
   const { data: topMovies } = useGetTopMoviesQuery();
   const { data: randomMovies } = useGetRandomMoviesQuery();
 
   const filteredMovies = data?.filter(
-    (movie) => setSelectedGenre === null || movie.genres === selectedGenre
+    (movie) => selectedGenre === null || movie.genre === selectedGenre
   );
 
   const handleGenreClick = (genreId) => {
@@ -31,7 +31,7 @@ const MoviesContainerPage = () => {
             <button
               key={g._id}
               className={`text-white text-lg font-semibold hover:bg-purple-500 transition duration-300 p-2 rounded mb-[1vw] 
-                ${selectedGenre === g.id ? "bg-red-500" : ""}`}
+                ${selectedGenre === g._id ? "bg-red-500" : ""}`}
               onClick={() => handleGenreClick(g._id)}
             >
               {g.name}
@@ -39,20 +39,20 @@ const MoviesContainerPage = () => {
           );
         })}
       </nav>
-      <section className="flex flex-col w-auto">
-        <div className=" w-[80vw] ">
+      <section className="flex flex-col w-full items-center gap-8">
+        <div className="w-[80vw]">
           <h1 className="text-white font-medium mb-5">Choose For You</h1>
-          <SliderUtil data={randomMovies} />
+          <SliderUtil data={randomMovies || []} />
         </div>
 
         <div className="w-[80vw] mb-8">
           <h1 className="text-white font-medium mb-5">Top Movies</h1>
-          <SliderUtil data={topMovies} />
+          <SliderUtil data={topMovies || []} />
         </div>
 
         <div className="w-[80vw] mb-8">
           <h1 className="text-white font-medium mb-5">Choose Movie</h1>
-          <SliderUtil data={filteredMovies} />
+          <SliderUtil data={filteredMovies || []} />
         </div>
       </section>
     </div>
