@@ -14,7 +14,7 @@ import {
 
 import Login from "./Pages/Auth/Login.jsx";
 import Register from "./Pages/Auth/Register.jsx";
-import Home from "./Pages/Home.jsx";
+import Home from "./Pages/Home/Home.jsx";
 import Allmovies from "./Pages/Movie/Allmovies.jsx";
 import MovieDetails from "./Pages/Movie/MovieDetails.jsx";
 
